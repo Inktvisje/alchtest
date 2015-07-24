@@ -1,7 +1,7 @@
 __author__ = 'Arjen'
 import sys
 from PyQt5.QtWidgets import QApplication
-from database.setup import create
+from database.dbsetup import create
 from screens.MainWindow import MainWindow
 from models.UserModel import UserModel
 

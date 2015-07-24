@@ -144,12 +144,13 @@ py2exe_options = dict(
 ##    excludes = "tof_specials Tkinter".split(),
 ##    ignores = "dotblas gnosis.xml.pickle.parsers._cexpat mx.DateTime".split(),
 ##    dll_excludes = "MSVCP90.dll mswsock.dll powrprof.dll".split(),
-    optimize=0,
-    compressed=False, # uncompressed may or may not have a faster startup
-    bundle_files=3,
+    optimize=2,
+    compressed=True, # uncompressed may or may not have a faster startup
+    bundle_files=1,
     dist_dir='dist',
-    includes=['sip', 'sqlalchemy', 'sqlalchemy.ext.declarative', 'sqlalchemy.orm',
+    includes=['sip', 'sqlalchemy',
               'PyQt5', 'PyQt5.QtGui', 'PyQt5.QtCore', 'PyQt5.QtWidgets'],
+
     )
 
 
@@ -160,7 +161,7 @@ setup(name="name",
       console=[main],
 
       # windows subsystem executables (no console)
-      windows=[],
+      windows=[main],
 
       # py2exe options
       zipfile=None,
